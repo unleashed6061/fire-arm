@@ -5,8 +5,121 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Firearm Pro | About</title>
-  <link rel="stylesheet" href="style.css">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <style>
+    /* Glassmorphism Styles */
+    body {
+      min-height: 100vh;
+      margin: 0;
+      font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+      background: linear-gradient(135deg, #232526 0%, #414345 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+    }
+    header {
+      width: 100%;
+      background: rgba(30, 30, 30, 0.5);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding: 1.5rem 0 1rem 0;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      color: #fff;
+      letter-spacing: 2px;
+      font-weight: 700;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0 0;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 500;
+      padding: 0.5rem 1.2rem;
+      border-radius: 12px;
+      transition: background 0.2s, color 0.2s;
+      background: rgba(255,255,255,0.05);
+    }
+    nav a:hover, nav a:focus {
+      background: rgba(255,255,255,0.18);
+      color: #232526;
+    }
+    main.about {
+      width: 100%;
+      max-width: 700px;
+      margin: 2.5rem auto 2rem auto;
+      padding: 2.5rem 2rem;
+      background: rgba(255,255,255,0.15);
+      border-radius: 32px;
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255,255,255,0.18);
+      color: #fff;
+    }
+    main.about h2 {
+      font-size: 2rem;
+      margin-top: 0;
+      margin-bottom: 1.2rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: #fff;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    }
+    main.about ul {
+      padding-left: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+    main.about li {
+      margin-bottom: 0.7rem;
+      font-size: 1.08rem;
+      background: rgba(255,255,255,0.08);
+      border-radius: 10px;
+      padding: 0.5rem 1rem;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    }
+    main.about p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      margin-bottom: 1.2rem;
+      color: #f3f3f3;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    }
+    footer {
+      width: 100%;
+      text-align: center;
+      padding: 1.2rem 0;
+      background: rgba(30, 30, 30, 0.5);
+      color: #fff;
+      font-size: 1rem;
+      letter-spacing: 1px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 -4px 16px 0 rgba(31, 38, 135, 0.10);
+      backdrop-filter: blur(8px);
+      margin-top: auto;
+    }
+    @media (max-width: 800px) {
+      main.about {
+        padding: 1.2rem 0.7rem;
+        max-width: 98vw;
+      }
+      header h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>

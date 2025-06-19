@@ -5,8 +5,169 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Firearm Pro | Products</title>
-  <link rel="stylesheet" href="style.css">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <style>
+    /* Glassmorphism Background */
+    body {
+      min-height: 100vh;
+      margin: 0;
+      font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+      background: linear-gradient(135deg, #232526 0%, #414345 100%);
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: rgba(30, 30, 40, 0.6);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding: 1.5rem 0;
+      text-align: center;
+    }
+
+    header h1 {
+      color: #fff;
+      letter-spacing: 2px;
+      margin: 0 0 0.5rem 0;
+      font-weight: 700;
+      font-size: 2.2rem;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1.1rem;
+      padding: 0.5rem 1.2rem;
+      border-radius: 12px;
+      transition: background 0.2s, color 0.2s;
+      background: rgba(255,255,255,0.05);
+    }
+
+    nav a:hover, nav a:focus {
+      background: rgba(255,255,255,0.18);
+      color: #00ffe7;
+    }
+
+    main.products {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2.5rem 1rem 2rem 1rem;
+    }
+
+    main.products h2 {
+      color: #fff;
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      letter-spacing: 1px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+
+    main.products p {
+      color: #e0e0e0;
+      margin-bottom: 2rem;
+      max-width: 500px;
+      text-align: center;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 2rem;
+      width: 100%;
+      max-width: 950px;
+    }
+
+    .product-item {
+      background: rgba(255,255,255,0.13);
+      border-radius: 24px;
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.18);
+      padding: 2rem 1.2rem 1.5rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: transform 0.18s, box-shadow 0.18s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .product-item:hover {
+      transform: translateY(-6px) scale(1.03);
+      box-shadow: 0 16px 40px 0 rgba(31, 38, 135, 0.22);
+    }
+
+    .product-img {
+      width: 100%;
+      max-width: 220px;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      border-radius: 18px;
+      margin-bottom: 1.2rem;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+      cursor: pointer;
+      transition: box-shadow 0.18s;
+      border: 1.5px solid rgba(255,255,255,0.22);
+      background: rgba(255,255,255,0.08);
+    }
+
+    .product-img:hover {
+      box-shadow: 0 8px 32px rgba(0,255,231,0.18);
+      border-color: #00ffe7;
+    }
+
+    .product-item h4 {
+      color: #fff;
+      margin: 0.5rem 0 0.3rem 0;
+      font-size: 1.25rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.10);
+    }
+
+    .product-item p {
+      color: #e0e0e0;
+      font-size: 1rem;
+      text-align: center;
+      margin: 0;
+    }
+
+    footer {
+      background: rgba(30, 30, 40, 0.6);
+      box-shadow: 0 -4px 24px 0 rgba(31, 38, 135, 0.10);
+      backdrop-filter: blur(8px);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      color: #b0b0b0;
+      text-align: center;
+      padding: 1.2rem 0;
+      font-size: 1rem;
+      letter-spacing: 0.5px;
+    }
+
+    @media (max-width: 700px) {
+      .product-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+      }
+      main.products {
+        padding: 1.2rem 0.5rem 1rem 0.5rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -27,17 +188,17 @@
 
     <div class="product-grid">
       <div class="product-item">
-        <img src="IMG_3633.JPG" alt="Handgun Model" class="product-img">
+        <img src="IMG_3633.JPG" alt="Handgun Model" class="product-img" onclick="openImg(this)">
         <h4>9mm Handgun</h4>
         <p>Reliable semi-automatic handgun suitable for personal protection.</p>
       </div>
       <div class="product-item">
-        <img src="IMG_3634.JPG" alt="Rifle Model" class="product-img">
+        <img src="IMG_3634.JPG" alt="Rifle Model" class="product-img" onclick="openImg(this)">
         <h4>Hunting Rifle</h4>
         <p>High-precision rifle for sport or game hunting.</p>
       </div>
       <div class="product-item">
-        <img src="IMG_3635.JPG" alt="Tactical Gear" class="product-img">
+        <img src="IMG_3635.JPG" alt="Tactical Gear" class="product-img" onclick="openImg(this)">
         <h4>Tactical Gear</h4>
         <p>Protective vests and field equipment for professionals.</p>
       </div>
@@ -47,5 +208,24 @@
   <footer>
     <p>&copy; 2025 Firearm Pro. All rights reserved.</p>
   </footer>
+
+  <!-- Simple Modal for Image Preview -->
+  <div id="imgModal" style="display:none;position:fixed;z-index:1000;left:0;top:0;width:100vw;height:100vh;background:rgba(20,20,30,0.85);backdrop-filter:blur(4px);align-items:center;justify-content:center;">
+    <span onclick="closeImg()" style="position:absolute;top:32px;right:48px;font-size:2.5rem;color:#fff;cursor:pointer;font-weight:700;z-index:1001;">&times;</span>
+    <img id="modalImg" src="" alt="Product" style="max-width:90vw;max-height:80vh;border-radius:18px;box-shadow:0 8px 32px rgba(0,0,0,0.25);border:2px solid #00ffe7;">
+  </div>
+  <script>
+    function openImg(img) {
+      document.getElementById('modalImg').src = img.src;
+      document.getElementById('imgModal').style.display = 'flex';
+    }
+    function closeImg() {
+      document.getElementById('imgModal').style.display = 'none';
+    }
+    // Close modal on ESC
+    document.addEventListener('keydown', function(e){
+      if(e.key === "Escape") closeImg();
+    });
+  </script>
 </body>
 </html>
